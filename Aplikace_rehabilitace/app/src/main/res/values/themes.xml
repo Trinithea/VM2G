@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.VM2G" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorYellow</item>
+        <item name="colorPrimaryVariant">@color/colorYellow</item>
+        <item name="colorOnPrimary">@color/colorBlack</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="Theme.VM2G.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/colorYellow</item>
+    </style>
+</resources>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="vm2g">VM2G</string>
+    <string name="vitejte_v_aplikaci">Vítejte v Aplikaci Průvodce cvičením Vojtovy metody 2. generace. Seznámíme Vás se vším potřebným pro provádění efektivní terapie.</string>
+    <string name="zde_p_idejte_nov_ho_pacienta">Zde přidejte nového pacienta</string>
+    <string name="p_idat_nov_ho_pacienta">Přidat nového pacienta</string>
+    <string name="jm_no_pacienta">Jméno pacienta</string>
+    <string name="p_idat_pacienta">Přidat pacienta</string>
+    <string name="terapie">Terapie</string>
+    <string name="konzultace">Konzultace</string>
+    <string name="literatura">Literatura</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="za_t_novou_terapii">Začít novou terapii</string>
+    <string name="instrukce_pro_odeslani_cviceni">Pro konzultace terapie odešlete záznam prováděného cvičení. Mějte na paměti, že tělo pacienta musí být celé v záběru</string>
+    <string name="zah_jit_z_znam_cvi_en">Zahájit záznam cvičení</string>
+    <string name="odeslat_dost">Odeslat žádost</string>
+    <string name="zaruceni_rychle_odpovedi">Na konzultace se snažíme odpovědět co nejrychleji, ne vždy na ně máme čas. Odpověď zaručujeme do jednoho týdne.</string>
+    <string name="zpr_va_o_cvi_en">Zpráva o cvičení</string>
+    <string name="zah_jit_terapii">Zahájit terapii</string>
+    <string name="pripravte_se_na_terapii">Připravte se na terapii účinnou rehabilitační metodou. Cesta to nebude jednoduchá, čeká nás hodně práce, ale výsledky budou stát za to.</string>
+    <string name="nastavit_terapii">Nastavit terapii</string>
+    <string name="_1">1.</string>
+    <string name="pokracovat">Pokračovat</string>
+    <string name="kolikrat_denn_budete_cvicit">Kolikrát denně budete cvičit?</string>
+    <string name="zacit_s_terapi">Začít s terapií</string>
+</resources>

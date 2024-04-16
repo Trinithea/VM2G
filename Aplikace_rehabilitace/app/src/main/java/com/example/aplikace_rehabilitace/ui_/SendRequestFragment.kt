@@ -8,25 +8,17 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.databinding.FragmentAddUserBinding
-import com.example.aplikace_rehabilitace.databinding.FragmentConsultationBinding
 
+class SendRequestFragment : Fragment() {
 
-class ConsultationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consultation, container, false)
+        return inflater.inflate(R.layout.fragment_send_request, container, false)
     }
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val binding = FragmentConsultationBinding.bind(view)
-
-        binding.btnStartRecordingExercise.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_sendRequestFragment))
-
-    }
 
 }

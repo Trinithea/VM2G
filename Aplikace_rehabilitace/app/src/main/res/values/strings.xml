@@ -23,4 +23,6 @@
     <string name="pokracovat">Pokračovat</string>
     <string name="kolikrat_denn_budete_cvicit">Kolikrát denně budete cvičit?</string>
     <string name="zacit_s_terapi">Začít s terapií</string>
+    <string name="v_k">Věk</string>
+    <string name="hmotnost">Hmotnost</string>
 </resources>

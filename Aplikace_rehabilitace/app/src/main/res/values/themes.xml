@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.VM2G" parent="Theme.AppCompat.Light">
+    <style name="Theme.VM2G" parent="Theme.MaterialComponents.Light.Bridge">
         <item name="colorPrimary">@color/colorYellow</item>
         <item name="colorPrimaryVariant">@color/colorYellow</item>
         <item name="colorOnPrimary">@color/colorBlack</item>
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
     </style>
 
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
@@ -22,5 +23,13 @@
 
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/colorYellow</item>
+    </style>
+
+    <style name="TextInputLayoutStyle"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorBlue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="hintTextColor">@color/colorBlue</item>
     </style>
 </resources>

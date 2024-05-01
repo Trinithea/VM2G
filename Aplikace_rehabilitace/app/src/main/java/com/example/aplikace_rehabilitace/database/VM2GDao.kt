@@ -10,24 +10,24 @@ import androidx.room.Update
 interface VM2GDao {
 
     @Insert
-    fun insert(therapy: TherapySettings)
+    suspend fun insertTherapy(therapy: TherapySettings)
 
     @Update
-    fun update(therapy: TherapySettings)
+    fun updateTherapy(therapy: TherapySettings)
 
     @Query("SELECT * from therapy_settings_table WHERE patientId = :patientId")
     fun getTherapy(patientId: Long): TherapySettings?
 
     @Insert
-    fun insert(patient: Patient)
+    suspend fun insertPatient(patient: Patient)
 
     @Update
-    fun update(patient: Patient)
+    fun updatePatient(patient: Patient)
 
     @Query("SELECT * from patient_table WHERE patientId = :key")
     fun getPatient(key: Long): Patient?
 
-    @Query("SELECT name FROM patient_table ORDER BY patientId DESC")
+    @Query("SELECT * FROM patient_table ORDER BY patientId DESC")
     fun getAllPatients(): LiveData<List<Patient>>
 
 

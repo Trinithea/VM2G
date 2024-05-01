@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "patient_table")
 data class Patient(
 
-
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "patientId")
     var patientId: Long = 0L,
 
     @ColumnInfo(name = "name")

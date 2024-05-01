@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.aplikace_rehabilitace.R
-import com.example.aplikace_rehabilitace.databinding.FragmentAddUserBinding
+import com.example.aplikace_rehabilitace.databinding.FragmentAddPatientBinding
 import com.example.aplikace_rehabilitace.databinding.FragmentConsultationBinding
 
 

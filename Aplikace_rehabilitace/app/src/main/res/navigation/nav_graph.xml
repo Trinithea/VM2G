@@ -11,17 +11,17 @@
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_addUserFragment"
-            app:destination="@id/addUserFragment" />
+            app:destination="@id/addPatientFragment" />
         <action
             android:id="@+id/action_welcomeFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addUserFragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.account.AddUserFragment"
-        android:label="AddUserFragment" >
+        android:id="@+id/addPatientFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.account.AddPatientFragment"
+        android:label="AddPatientFragment" >
         <action
-            android:id="@+id/action_addUserFragment_to_homeScreenFragment"
+            android:id="@+id/action_addPatientFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment

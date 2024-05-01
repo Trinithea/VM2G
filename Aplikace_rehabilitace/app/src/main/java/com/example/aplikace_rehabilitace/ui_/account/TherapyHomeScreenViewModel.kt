@@ -2,12 +2,16 @@ package com.example.aplikace_rehabilitace.ui_.account
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.aplikace_rehabilitace.database.Patient
 import com.example.aplikace_rehabilitace.database.VM2GDao
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TherapyHomeScreenViewModel(
     val database: VM2GDao,
@@ -21,6 +25,23 @@ class TherapyHomeScreenViewModel(
         }
 
         private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
+        private var patient = MutableLiveData<Patient?>()
+        private val patients = database.getAllPatients()
 
-    
+        init{
+            initializePatient()
+        }
+
+        private fun initializePatient(){
+            uiScope.launch{
+                patient.value = getPatientFromDatabase()
+            }
+        }
+
+        private suspend fun getPatientFromDatabase(): Patient?{
+            return withContext(Dispatchers.IO){
+                var patient = database.getPatient(1)
+                patient
+            }
+        }
     }

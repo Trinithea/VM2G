@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.aplikace_rehabilitace.ui_.therapy.TherapyHomeScreenFragment
+import com.example.aplikace_rehabilitace.ui_.account.TherapyHomeScreenFragment
 
 class ViewPagerAdapter (
     fragmentManager: FragmentManager,

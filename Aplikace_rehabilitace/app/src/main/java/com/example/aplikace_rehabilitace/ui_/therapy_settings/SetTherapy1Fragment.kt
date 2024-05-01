@@ -1,4 +1,4 @@
-package com.example.aplikace_rehabilitace.ui_.therapy
+package com.example.aplikace_rehabilitace.ui_.therapy_settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.databinding.FragmentSetTherapy1Binding
-import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
 
 class SetTherapy1Fragment : Fragment() {
 

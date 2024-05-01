@@ -1,4 +1,4 @@
-package com.example.aplikace_rehabilitace.ui_
+package com.example.aplikace_rehabilitace.ui_.account
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

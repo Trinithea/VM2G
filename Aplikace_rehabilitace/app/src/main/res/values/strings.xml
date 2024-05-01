@@ -25,4 +25,9 @@
     <string name="zacit_s_terapi">Začít s terapií</string>
     <string name="v_k">Věk</string>
     <string name="hmotnost">Hmotnost</string>
+    <string name="napi_te_svoji_dost">Napište svoji žádost</string>
+    <string name="terapie_nastavena">Terapie nastavena</string>
+    <string name="jdeme_na_to">Jdeme na to!</string>
+    <string name="vypl_te_as">Vyplňte čas</string>
+    <string name="_00_00">00:00</string>
 </resources>

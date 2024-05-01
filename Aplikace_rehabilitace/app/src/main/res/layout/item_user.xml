@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="therapyHomeScreenViewModel"
+            type="com.example.aplikace_rehabilitace.ui_.account.TherapyHomeScreenViewModel" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/round_yellow_16"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
 
     <Button
         android:id="@+id/button"
@@ -41,3 +50,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

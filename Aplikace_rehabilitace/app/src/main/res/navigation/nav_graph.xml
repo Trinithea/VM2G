@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/welcomeFragment">
 
@@ -17,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.AddUserFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.account.AddUserFragment"
         android:label="AddUserFragment" >
         <action
             android:id="@+id/action_addUserFragment_to_homeScreenFragment"
@@ -40,7 +41,7 @@
         android:label="SendRequestFragment" />
     <fragment
         android:id="@+id/setTherapy1Fragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.therapy.SetTherapy1Fragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy1Fragment"
         android:label="SetTherapy1Fragment" >
         <action
             android:id="@+id/action_setTherapy1Fragment_to_setTherapy2Fragment"
@@ -48,6 +49,54 @@
     </fragment>
     <fragment
         android:id="@+id/setTherapy2Fragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.therapy.SetTherapy2Fragment"
-        android:label="SetTherapy2Fragment" />
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy2Fragment"
+        android:label="SetTherapy2Fragment" >
+        <action
+            android:id="@+id/action_setTherapy2Fragment_to_setTherapy3Fragment"
+            app:destination="@id/setTherapy3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTherapy3Fragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy3Fragment"
+        android:label="fragment_set_therapy3"
+        tools:layout="@layout/fragment_set_therapy3" >
+        <action
+            android:id="@+id/action_setTherapy3Fragment_to_setTherapy4Fragment"
+            app:destination="@id/setTherapy4Fragment" />
+        <argument
+            android:name="numOfExercise"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTherapy4Fragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy4Fragment"
+        android:label="fragment_set_therapy4"
+        tools:layout="@layout/fragment_set_therapy4" >
+        <action
+            android:id="@+id/action_setTherapy4Fragment_to_setTherapy5Fragment"
+            app:destination="@id/setTherapy5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTherapy5Fragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy5Fragment"
+        android:label="fragment_set_therapy5"
+        tools:layout="@layout/fragment_set_therapy5" >
+        <action
+            android:id="@+id/action_setTherapy5Fragment_to_setTherapy6Fragment"
+            app:destination="@id/setTherapy6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTherapy6Fragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy6Fragment"
+        android:label="fragment_set_therapy6"
+        tools:layout="@layout/fragment_set_therapy6" >
+        <action
+            android:id="@+id/action_setTherapy6Fragment_to_setTherapyFinalFragment"
+            app:destination="@id/setTherapyFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTherapyFinalFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapyFinalFragment"
+        android:label="SetTherapyFinalFragment" />
 </navigation>

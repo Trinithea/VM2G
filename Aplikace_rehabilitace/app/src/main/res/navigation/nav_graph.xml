@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_setTherapy1Fragment"
             app:destination="@id/setTherapy1Fragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_addPatientFragment"
+            app:destination="@id/addPatientFragment" />
     </fragment>
     <fragment
         android:id="@+id/sendRequestFragment"

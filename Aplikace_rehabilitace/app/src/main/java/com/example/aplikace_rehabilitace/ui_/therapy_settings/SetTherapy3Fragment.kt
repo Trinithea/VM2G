@@ -12,7 +12,6 @@ import com.example.aplikace_rehabilitace.databinding.FragmentSetTherapy3Binding
 class SetTherapy3Fragment : Fragment() {
 
     private lateinit var viewModel: SetTherapy3ViewModel
-    private lateinit var viewModelFactory: SetTherapy3ViewModelFactory
     private lateinit var binding: FragmentSetTherapy3Binding
 
     override fun onCreateView(

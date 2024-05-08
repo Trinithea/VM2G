@@ -2,11 +2,19 @@ package com.example.aplikace_rehabilitace.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "therapy_settings_table")
+@Entity(tableName = "therapy_settings_table",
+        foreignKeys = [ForeignKey(
+            entity = Patient::class,
+            parentColumns = ["patientId"],
+            childColumns = ["patientId"],
+            onDelete = ForeignKey.CASCADE
+        )])
 data class TherapySettings(
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "therapyId")
     var therapyId: Long = 0L,
 
     @ColumnInfo(name = "patientId")

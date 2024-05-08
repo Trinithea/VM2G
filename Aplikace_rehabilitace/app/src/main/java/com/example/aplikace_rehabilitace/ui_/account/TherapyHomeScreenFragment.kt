@@ -9,7 +9,10 @@ import android.widget.GridLayout
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.aplikace_rehabilitace.MainActivity
+import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
 
@@ -39,7 +42,7 @@ class TherapyHomeScreenFragment : Fragment() {
         binding.patientList.layoutManager = manager
 
         val adapter = ViewPatientsAdapter(PatientListener {
-            patientId -> Toast.makeText(context,"Byl zvolen pacient ${patientId}", Toast.LENGTH_SHORT).show()
+            patientId -> logPatient(patientId)
         })
         binding.patientList.adapter = adapter
         viewModel.patients.observe(viewLifecycleOwner, Observer {
@@ -47,18 +50,19 @@ class TherapyHomeScreenFragment : Fragment() {
                 adapter.data = it
             }
         })
-//viewModel.database.getPatient(patientId)
+//viewModel.database.getPatient(patientId) -> pak to začne padat
 
         return binding.root
     }
 
+    private fun logPatient(patientId: Long){
+        (activity as MainActivity).setCurrentPatientId(patientId)
+        Toast.makeText(context,"Byl zvolen pacient ${(activity as MainActivity).getCurrentPatientId()}", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //val binding =
-        //binding.btnStartTherapy.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_setTherapy1Fragment))
-
-       // viewModel = ViewModelProvider(this).get(TherapyHomeScreenViewModel::class.java)
-
-        //binding.lifeCycleOwner = this
+        binding.btnStartTherapy.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_setTherapy1Fragment))
+        binding.btnAddNewPatient.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_addPatientFragment))
     }
 
 }

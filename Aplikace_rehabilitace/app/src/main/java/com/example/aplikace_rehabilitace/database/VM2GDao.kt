@@ -27,7 +27,7 @@ interface VM2GDao {
     @Query("SELECT * from patient_table WHERE patientId = :key")
     fun getPatient(key: Long): Patient?
 
-    @Query("SELECT * FROM patient_table ORDER BY patientId DESC")
+    @Query("SELECT * FROM patient_table ORDER BY patientId")
     fun getAllPatients(): LiveData<List<Patient>>
 
 

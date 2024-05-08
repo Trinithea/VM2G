@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.GridLayout
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import com.example.aplikace_rehabilitace.R
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
 
@@ -33,6 +33,17 @@ class TherapyHomeScreenFragment : Fragment() {
 
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_therapy, container, false)
+
+        val manager = GridLayoutManager(activity,3)
+        binding.patientList.layoutManager = manager
+
+        val adapter = ViewPatientsAdapter()
+        binding.patientList.adapter = adapter
+        viewModel.patients.observe(viewLifecycleOwner, Observer {
+            it?.let{
+                adapter.data = it
+            }
+        })
 
 
         return binding.root

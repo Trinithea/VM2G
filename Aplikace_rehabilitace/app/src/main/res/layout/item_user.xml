@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
         <variable
@@ -7,34 +8,37 @@
             type="com.example.aplikace_rehabilitace.ui_.account.TherapyHomeScreenViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:background="@drawable/round_yellow_16"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/firstLetterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/round_purple_32"
-        android:textColor="@color/colorLightYellow"
-        android:textSize="24sp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/roboto"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
         android:paddingStart="24dp"
         android:paddingTop="16dp"
         android:paddingEnd="24dp"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="16dp"
+        android:text="M"
+        android:textColor="@color/colorLightYellow"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/patientNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -48,6 +52,6 @@
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/firstLetterButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -16,8 +16,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import com.example.aplikace_rehabilitace.databinding.FragmentAddPatientBinding
-import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
-import com.example.aplikace_rehabilitace.databinding.FragmentWelcomeBinding
 
 
 class AddPatientFragment : Fragment() {

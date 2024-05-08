@@ -26,7 +26,7 @@ class TherapyHomeScreenViewModel(
 
         private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
         private var patient = MutableLiveData<Patient?>()
-        private val patients = database.getAllPatients()
+        val patients = database.getAllPatients()
 
         init{
             initializePatient()

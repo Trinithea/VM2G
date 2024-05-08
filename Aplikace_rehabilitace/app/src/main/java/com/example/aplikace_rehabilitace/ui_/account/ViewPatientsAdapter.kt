@@ -1,17 +1,16 @@
 package com.example.aplikace_rehabilitace.ui_.account
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import androidx.compose.ui.text.capitalize
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aplikace_rehabilitace.R
-import com.example.aplikace_rehabilitace.TextItemViewHolder
 import com.example.aplikace_rehabilitace.database.Patient
+import com.example.aplikace_rehabilitace.databinding.ItemUserBinding
 
-class ViewPatientsAdapter: RecyclerView.Adapter<ViewPatientsAdapter.ViewHolder>() {
+class ViewPatientsAdapter(val clickListener: PatientListener): ListAdapter<Patient, ViewPatientsAdapter.ViewHolder>(PatientDiffCallback()) {
     var data = listOf<Patient>()
         set(value) {
             field = value
@@ -22,32 +21,41 @@ class ViewPatientsAdapter: RecyclerView.Adapter<ViewPatientsAdapter.ViewHolder>(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        holder.bind(item, data)
+        holder.bind(item, clickListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.item_user, parent, false)
-        return ViewHolder(view)
+        return ViewHolder.from(parent)
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val firstLetterButton : Button = itemView.findViewById(R.id.firstLetterButton)
-        val patientNameTextView: TextView = itemView.findViewById(R.id.patientNameTextView)
+    class ViewHolder private constructor(val binding: ItemUserBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bind(item: Patient, data: List<Patient>){
-            firstLetterButton.text = item.patientName[0].uppercase()
-            patientNameTextView.text = item.patientName.replaceFirstChar(Char::titlecase)
-            val index = data.indexOf(item) % 6
-            firstLetterButton.setBackgroundResource(when(index){
-                0 -> R.drawable.round_purple_32
-                1 -> R.drawable.round_wine_32
-                2 -> R.drawable.round_lightblue_32
-                3 -> R.drawable.round_pink_32
-                4 -> R.drawable.round_greenblue_32
-                5 -> R.drawable.round_brown_32
-                else -> R.drawable.round_purple_32
-            })
+        fun bind(item: Patient, clickListener: PatientListener){
+            binding.patient = item // patient je variable z XML
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
+        }
+        companion object {
+            fun from(parent:ViewGroup):ViewHolder{
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = ItemUserBinding.inflate(layoutInflater, parent, false)
+
+                return ViewHolder(binding)
+            }
         }
     }
+}
+
+class PatientDiffCallback: DiffUtil.ItemCallback<Patient>(){
+    override fun areItemsTheSame(oldItem: Patient, newItem: Patient): Boolean {
+        return oldItem.patientId == newItem.patientId
+    }
+
+    override fun areContentsTheSame(oldItem: Patient, newItem: Patient): Boolean {
+        return oldItem == newItem
+    }
+}
+
+class PatientListener(val clickListener: (patientId: Long) -> Unit){
+    fun onClick(patient:Patient) = clickListener(patient.patientId)
 }

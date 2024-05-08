@@ -2,7 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-
+        <variable
+            name="patient"
+            type="com.example.aplikace_rehabilitace.database.Patient"
+            />
+        <variable
+            name="clickListener"
+            type="com.example.aplikace_rehabilitace.ui_.account.PatientListener" />
         <variable
             name="therapyHomeScreenViewModel"
             type="com.example.aplikace_rehabilitace.ui_.account.TherapyHomeScreenViewModel" />
@@ -12,11 +18,12 @@
 
     android:background="@drawable/round_yellow_16"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:onClick="@{() -> clickListener.onClick(patient)}">
 
 
-    <Button
-        android:id="@+id/firstLetterButton"
+    <TextView
+        android:id="@+id/firstLetterTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,12 +37,12 @@
         android:paddingTop="16dp"
         android:paddingEnd="24dp"
         android:paddingBottom="16dp"
-        android:text="M"
         android:textColor="@color/colorLightYellow"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:patientFirstLetter="@{patient}"/>
 
     <TextView
         android:id="@+id/patientNameTextView"
@@ -45,13 +52,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/roboto"
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstLetterButton" />
+        app:layout_constraintTop_toBottomOf="@+id/firstLetterTextView"
+        app:patientName="@{patient}"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

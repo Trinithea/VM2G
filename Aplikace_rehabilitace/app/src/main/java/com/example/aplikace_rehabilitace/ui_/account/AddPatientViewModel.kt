@@ -1,6 +1,7 @@
 package com.example.aplikace_rehabilitace.ui_.account
 
 import android.app.Application
+import android.util.Log
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -46,6 +47,7 @@ class AddPatientViewModel (
             _navigateToHomeScreen.value = newPatient
         }
     }
+
 
     private suspend fun insert(patient: Patient){
         withContext(Dispatchers.IO){

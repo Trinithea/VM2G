@@ -95,7 +95,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("com.google.android.material:material:1.1.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-
+    implementation("androidx.databinding:databinding-runtime:7.0.0")
 }
 
 

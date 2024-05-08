@@ -1,11 +1,14 @@
 package com.example.aplikace_rehabilitace.ui_.account
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -14,6 +17,7 @@ import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import com.example.aplikace_rehabilitace.databinding.FragmentAddPatientBinding
 import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
+import com.example.aplikace_rehabilitace.databinding.FragmentWelcomeBinding
 
 
 class AddPatientFragment : Fragment() {
@@ -24,8 +28,9 @@ class AddPatientFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAddPatientBinding.inflate(inflater, container, false)
+       // binding = FragmentAddPatientBinding.inflate(inflater, container, false)
 
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_patient, container, false)
         val application = requireNotNull(this.activity).application
         val dataSource = VM2GDatabase.getInstance(application).vm2gDatabaseDao
         val viewModelFactory = AddPatientViewModelFactory(dataSource,application)
@@ -42,13 +47,18 @@ class AddPatientFragment : Fragment() {
         })
 */
 
-        return FragmentAddPatientBinding.inflate(inflater, container, false).root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //binding =  FragmentAddPatientBinding.bind(view)
 
-        binding.addUserButton2.setOnClickListener{
+
+       // binding.pokusneTlacitko.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_addPatientFragment_to_homeScreenFragment))
+        binding.pokusneTlacitko.setOnClickListener {
             addPatient()
+            Toast.makeText(context, "Nový pacient pod tímto účtem byl úspěšně přidán", Toast.LENGTH_SHORT).show()
             this.findNavController().navigate(R.id.action_addPatientFragment_to_homeScreenFragment)
         }
 

@@ -55,7 +55,7 @@ class SetTherapy1Fragment : Fragment() {
     }
 
     private fun addTherapy(){
-        viewModel.addTherapySettings((activity as MainActivity).getCurrentPatientId())
+        viewModel.addTherapySettings(MainActivity.getCurrentPatientId())
 
     }
 }

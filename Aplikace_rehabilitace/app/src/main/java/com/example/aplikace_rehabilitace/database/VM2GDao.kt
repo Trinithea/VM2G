@@ -30,5 +30,8 @@ interface VM2GDao {
     @Query("SELECT * FROM patient_table ORDER BY patientId")
     fun getAllPatients(): LiveData<List<Patient>>
 
+    @Query("UPDATE therapy_settings_table SET frequency = :frequency WHERE patientId = :patientId")
+    fun updateTherapyFrequency(patientId: Long, frequency: Int)
+
 
 }

@@ -22,6 +22,7 @@ class ViewPatientsAdapter(val clickListener: PatientListener): ListAdapter<Patie
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
         holder.bind(item, clickListener)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +34,7 @@ class ViewPatientsAdapter(val clickListener: PatientListener): ListAdapter<Patie
         fun bind(item: Patient, clickListener: PatientListener){
             binding.patient = item // patient je variable z XML
             binding.clickListener = clickListener
+
             binding.executePendingBindings()
         }
         companion object {

@@ -27,13 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     val usedAccountId = -1L // TODO: změnit
 
-    fun setCurrentPatientId(id: Long) {
-        MainApplicationClass.setCurrentPatientId(id)
-    }
 
-    fun getCurrentPatientId(): Long {
-        return MainApplicationClass.getCurrentPatientId()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +48,15 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
+    companion object{
+        fun setCurrentPatientId(id: Long) {
+            MainApplicationClass.setCurrentPatientId(id)
+        }
 
+        fun getCurrentPatientId(): Long {
+            return MainApplicationClass.getCurrentPatientId()
+        }
+    }
 
 }
 

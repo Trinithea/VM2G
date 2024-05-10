@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -15,12 +16,14 @@ import com.example.aplikace_rehabilitace.MainActivity
 import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.database.VM2GDatabase
 import com.example.aplikace_rehabilitace.databinding.FragmentTherapyBinding
+import com.example.aplikace_rehabilitace.databinding.ItemUserBinding
 
 
 class TherapyHomeScreenFragment : Fragment() {
 
     private lateinit var viewModel: TherapyHomeScreenViewModel
     private lateinit var binding: FragmentTherapyBinding
+    private lateinit var adapter: ViewPatientsAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +44,7 @@ class TherapyHomeScreenFragment : Fragment() {
         val manager = GridLayoutManager(activity,3)
         binding.patientList.layoutManager = manager
 
-        val adapter = ViewPatientsAdapter(PatientListener {
+        adapter = ViewPatientsAdapter(PatientListener {
             patientId -> logPatient(patientId)
         })
         binding.patientList.adapter = adapter
@@ -50,14 +53,22 @@ class TherapyHomeScreenFragment : Fragment() {
                 adapter.data = it
             }
         })
-//viewModel.database.getPatient(patientId) -> pak to začne padat
+
+        //viewModel.database.getPatient(patientId) -> pak to začne padat
 
         return binding.root
     }
 
     private fun logPatient(patientId: Long){
-        (activity as MainActivity).setCurrentPatientId(patientId)
-        Toast.makeText(context,"Byl zvolen pacient ${(activity as MainActivity).getCurrentPatientId()}", Toast.LENGTH_SHORT).show()
+        MainActivity.setCurrentPatientId(patientId)
+        binding.btnStartTherapy.isEnabled = true
+        binding.btnStartTherapy.setBackgroundResource(R.drawable.roundcorner32)
+        viewModel.patients.observe(viewLifecycleOwner, Observer {
+            it?.let{
+                adapter.data = it
+            }
+        })
+        //Toast.makeText(context,"Byl zvolen pacient ${MainActivity.getCurrentPatientId()}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

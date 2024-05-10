@@ -1,6 +1,7 @@
 package com.example.aplikace_rehabilitace.ui_.therapy_settings
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,6 +20,7 @@ class SetTherapy1ViewModel (
 ) : AndroidViewModel(application) {
 
     private var viewModelJob = Job()
+    private var therapy = MutableLiveData<TherapySettings?>()
 
     override fun onCleared() {
         super.onCleared()
@@ -29,27 +31,22 @@ class SetTherapy1ViewModel (
 
     fun addTherapySettings(patientId: Long){
         uiScope.launch {
-            val therapy = getTherapy(patientId)
+            val therapy = getTherapyFromDatabase(patientId)
             if (therapy == null){
                 val newTherapy = TherapySettings(patientId = patientId)
                 insert(newTherapy)
             }
 
-
-            /*
-            val therapy = database.getTherapy(patientId)
-            if (therapy == null) {
-                    therapy = TherapySettings(patientId = patientId)
-                    insert(therapy)
-            }*/
         }
     }
 
-    private suspend fun getTherapy(patientId: Long) {
-        withContext(Dispatchers.IO){
-            return@withContext database.getTherapy(patientId)
+    private suspend fun getTherapyFromDatabase(patientId: Long): TherapySettings?{
+        return withContext(Dispatchers.IO){
+            var therapy = database.getTherapy(patientId)
+            therapy
         }
     }
+
 
     private suspend fun insert(therapy: TherapySettings){
         withContext(Dispatchers.IO){

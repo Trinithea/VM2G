@@ -43,11 +43,26 @@ class SetTherapy3ViewModel (
         }
     }
 
-    fun updateTherapySettings(patientId: Long, frequency: Int){
+    fun updateTherapySettings(frequency: Int, times: List<String?>){
         uiScope.launch {
-            update(patientId, frequency)
+            update(MainActivity.getCurrentPatientId(),
+                frequency,
+                times[0].toString(),
+                times[1].toString(),
+                times[2].toString(),
+                times[3].toString(),
+                times[4].toString())
             _therapy.value = getTherapyFromDatabase(MainActivity.getCurrentPatientId())
         }
+    }
+
+    fun getTimes(): List<String?>{
+        val times = listOf(_therapy.value?.exercise1Time,
+            _therapy.value?.exercise2Time,
+            _therapy.value?.exercise3Time,
+            _therapy.value?.exercise4Time,
+            _therapy.value?.exercise5Time)
+        return times
     }
 
     private suspend fun getTherapyFromDatabase(patientId: Long): TherapySettings?{
@@ -56,9 +71,9 @@ class SetTherapy3ViewModel (
             therapyL
         }
     }
-    private suspend fun update(patientId: Long, frequency: Int) {
+    private suspend fun update(patientId: Long, frequency: Int, time1:String, time2:String, time3: String, time4:String, time5:String) {
         withContext(Dispatchers.IO){
-            database.updateTherapyFrequency(patientId, frequency)
+            database.updateTherapyTimes(patientId, frequency, time1, time2, time3, time4, time5)
         }
     }
 

@@ -33,5 +33,8 @@ interface VM2GDao {
     @Query("UPDATE therapy_settings_table SET frequency = :frequency WHERE patientId = :patientId")
     fun updateTherapyFrequency(patientId: Long, frequency: Int)
 
+    @Query("UPDATE therapy_settings_table SET frequency = :frequency, time1 = :time1, time2 = :time2, time3=:time3, time4=:time4, time5=:time5 WHERE patientId = :patientId")
+    fun updateTherapyTimes(patientId: Long, frequency: Int, time1:String, time2:String, time3:String,time4:String,time5:String)
+
 
 }

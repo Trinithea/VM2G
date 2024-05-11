@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.aplikace_rehabilitace.MainActivity
 import com.example.aplikace_rehabilitace.R
@@ -25,6 +26,7 @@ class SetTherapy4Fragment : Fragment(){
     private lateinit var viewModel: SetTherapy4ViewModel
     private lateinit var binding: FragmentSetTherapy4Binding
     private lateinit var adapter: ExercisePositionAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,10 +59,21 @@ class SetTherapy4Fragment : Fragment(){
         return binding.root
     }
 
-    private fun selectPosition(positionId: Long){
+    fun selectPosition(positionId: Long){
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.continue3Button.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_setTherapy4Fragment_to_setTherapy5Fragment))
+        binding.continue3Button.setOnClickListener {
+            insertSelectedPosition(adapter.selectedPositionIds)
+            this.findNavController().navigate(R.id.action_setTherapy4Fragment_to_setTherapy5Fragment)
+        }
+    }
+
+    private fun insertSelectedPosition(ids: MutableList<Long>){
+        viewModel.removeAllPositionsForTherapy()
+        for(id in ids){
+            viewModel.addPositionToTherapy(id)
+        }
     }
 }

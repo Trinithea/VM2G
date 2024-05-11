@@ -25,7 +25,7 @@ data class TherapyPositions(
     var therapyPositionsId: Long = 0L,
 
     @ColumnInfo(name = "therapyId")
-    val therapyId: Long,
+    val therapyId: Long?,
 
     @ColumnInfo(name = "positionId")
     val positionId: Long,

@@ -31,4 +31,10 @@
     <string name="vypl_te_as">Vyplňte čas</string>
     <string name="_00_00">00:00</string>
     <string name="vyberte_preferovan_as_cvi_en">Vyberte preferovaný čas cvičení</string>
+    <string name="vyberte_cvi_c_polohy">Vyberte cvičící polohy</string>
+    <string name="dokon_it_nastaven_terapie">Dokončit nastavení terapie</string>
+    <string name="doporu_en_cvi_c_polohy">Doporučené cvičící polohy</string>
+    <string name="zapojte_se_do_v_zkumu">Zapojte se do výzkumu</string>
+    <string name="zapojen_do_v_zkumu">Zapojení do výzkumu je jednoduché, vyžaduje od vás trochu práce navíc, pomůžete ostatním rodičům i dětem.</string>
+    <string name="chci_se_zapojit">Chci se zapojit</string>
 </resources>

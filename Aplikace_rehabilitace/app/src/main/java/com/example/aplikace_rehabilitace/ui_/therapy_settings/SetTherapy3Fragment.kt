@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.TimePicker
@@ -69,6 +70,10 @@ class SetTherapy3Fragment : Fragment() {
                     editText.inputType = InputType.TYPE_NULL
                     editText.setOnClickListener { openDialog(editText) }
 
+                    val deleteButton = itemView.findViewById<ImageButton>(com.example.aplikace_rehabilitace.R.id.deleteViewButton)
+                    deleteButton.setOnClickListener {
+                        binding.timeLinearLayout.removeView(itemView)
+                    }
                     // Add the inflated view to the LinearLayout
                     binding.timeLinearLayout.addView(itemView)
                 }

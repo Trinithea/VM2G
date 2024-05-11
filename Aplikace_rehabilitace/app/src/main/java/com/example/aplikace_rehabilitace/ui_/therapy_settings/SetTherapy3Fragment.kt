@@ -1,12 +1,15 @@
 package com.example.aplikace_rehabilitace.ui_.therapy_settings
 
+import android.app.TimePickerDialog
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.TimePicker
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.core.content.ContextCompat
@@ -63,6 +66,9 @@ class SetTherapy3Fragment : Fragment() {
                     // For example, assuming you have TextViews in item_time_of_exercise layout
                     //itemView.findViewById<TextInputLayout>(R.id.textInputLayout).findViewById<TextInputEditText>(R.id.timeTextInputView).text = times[i]
                     editText.setText(times[i-1])
+                    editText.inputType = InputType.TYPE_NULL
+                    editText.setOnClickListener { openDialog(editText) }
+
                     // Add the inflated view to the LinearLayout
                     binding.timeLinearLayout.addView(itemView)
                 }
@@ -90,6 +96,18 @@ class SetTherapy3Fragment : Fragment() {
             times[4-i] = "00:00"
         }
         viewModel.updateTherapySettings(numOfExercise, times)
+    }
+
+
+
+    private fun openDialog(editText: TextInputEditText){
+        val dialog = TimePickerDialog(context, R.style.TimeDialogTheme,
+            { view, hourOfDay, minute ->
+                val hourOfDayText = if (hourOfDay < 10) "0${hourOfDay}" else hourOfDay.toString()
+                val minuteText = if (minute < 10) "0${minute}" else minute.toString()
+                editText.setText("$hourOfDayText:$minuteText")
+            }, 7,0, true)
+        dialog.show()
     }
 
 }

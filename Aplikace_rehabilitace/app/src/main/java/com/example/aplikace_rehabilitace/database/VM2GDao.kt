@@ -12,14 +12,17 @@ interface VM2GDao {
     @Insert
     suspend fun insertTherapy(therapy: TherapySettings)
 
+    @Insert
+    suspend fun insertExercisePosition(position: ExercisePosition)
+
+    @Insert
+    suspend fun insertPatient(patient: Patient)
+
     @Update
     fun updateTherapy(therapy: TherapySettings)
 
     @Query("SELECT * from therapy_settings_table WHERE patientId = :patientId")
     fun getTherapy(patientId: Long): TherapySettings?
-
-    @Insert
-    suspend fun insertPatient(patient: Patient)
 
     @Update
     fun updatePatient(patient: Patient)
@@ -29,6 +32,18 @@ interface VM2GDao {
 
     @Query("SELECT * FROM patient_table ORDER BY patientId")
     fun getAllPatients(): LiveData<List<Patient>>
+
+    @Query("SELECT * FROM position_table WHERE positionId = :positionId")
+    fun getExercisePosition(positionId:Long): ExercisePosition?
+
+    @Query("SELECT * FROM position_table ORDER BY positionId")
+    fun getAllExercisePositions(): LiveData<List<ExercisePosition>>
+
+    @Query("SELECT positionId FROM therapy_positions_table WHERE therapyId=:therapyId ORDER BY positionId")
+    fun getAllTherapyPositionsIds(therapyId:Long): LiveData<List<Long>>
+
+    @Query("DELETE FROM therapy_positions_table WHERE therapyId = :therapyId AND positionId = :positionId")
+    fun removeTherapyPosition(therapyId: Long, positionId: Long)
 
     @Query("UPDATE therapy_settings_table SET frequency = :frequency WHERE patientId = :patientId")
     fun updateTherapyFrequency(patientId: Long, frequency: Int)

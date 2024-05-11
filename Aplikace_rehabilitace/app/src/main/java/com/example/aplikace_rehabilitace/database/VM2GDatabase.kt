@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [Patient::class, TherapySettings::class],
-    version = 3,
+    entities = [Patient::class, TherapySettings::class, ExercisePosition::class, TherapyPositions::class],
+    version = 4,
     exportSchema = false)
 abstract class VM2GDatabase : RoomDatabase() {
     abstract val vm2gDatabaseDao: VM2GDao

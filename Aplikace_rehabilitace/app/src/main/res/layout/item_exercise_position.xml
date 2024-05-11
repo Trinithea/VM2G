@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="position"
+            type="com.example.aplikace_rehabilitace.database.ExercisePosition"
+            />
+        <variable
+            name="clickListener"
+            type="com.example.aplikace_rehabilitace.ui_.therapy_settings.PositionListener" />
+        <variable
+            name="therapyHomeScreenViewModel"
+            type="com.example.aplikace_rehabilitace.ui_.account.TherapyHomeScreenViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainLayout"
     android:background="@drawable/round_blue_stroke_16"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:foregroundGravity="center_vertical|center|center_horizontal"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:onClick="@{() -> clickListener.onClick(position)}">
 
     <TextView
         android:id="@+id/exerciseName"
@@ -14,20 +28,22 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto"
-        android:text="TextView"
         android:textColor="@color/colorBlack"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/exerciseUncheckButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:positionName="@{position}"/>
 
     <ImageButton
         android:id="@+id/exerciseUncheckButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cross2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

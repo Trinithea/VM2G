@@ -52,6 +52,10 @@ class SetTherapy3Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.buttonTempDB.setOnClickListener{
+            viewModel.addTemporaryExercisePositions()
+        }
+
         viewModel.therapy.observe(viewLifecycleOwner, Observer { therapy ->
             if (therapy!= null) {
                 binding.timeLinearLayout.removeAllViews()
@@ -74,6 +78,8 @@ class SetTherapy3Fragment : Fragment() {
                     deleteButton.setOnClickListener {
                         binding.timeLinearLayout.removeView(itemView)
                     }
+
+
                     // Add the inflated view to the LinearLayout
                     binding.timeLinearLayout.addView(itemView)
                 }
@@ -87,6 +93,7 @@ class SetTherapy3Fragment : Fragment() {
         }
 
     }
+
 
     private fun updateTherapy() {
         numOfExercise = binding.timeLinearLayout.childCount

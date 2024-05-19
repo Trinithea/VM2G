@@ -1,6 +1,7 @@
 package com.example.aplikace_rehabilitace.ui_.therapy_settings
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,7 @@ import com.example.aplikace_rehabilitace.database.Patient
 import com.example.aplikace_rehabilitace.database.TherapyPositions
 import com.example.aplikace_rehabilitace.database.TherapySettings
 import com.example.aplikace_rehabilitace.database.VM2GDao
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -26,23 +28,35 @@ class SetTherapy4ViewModel (
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     val positions = database.getAllExercisePositions()
 
+    private val removeScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    private val addScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    private val removeScopeCompleted = CompletableDeferred<Unit>()
+
+    init {
+       Log.d("ST4", "positions: ${positions}")
+    }
+
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
     }
 
     fun addPositionToTherapy(positionId: Long){
-        uiScope.launch {
+        addScope.launch {
+            removeScopeCompleted.await()
             val therapy = getTherapyFromDatabase(MainActivity.getCurrentPatientId())
             val therapyPosition = TherapyPositions(therapyId = therapy?.therapyId, positionId = positionId)
             insert(therapyPosition)
+
         }
     }
 
     fun removeAllPositionsForTherapy(){
-        uiScope.launch {
+        removeScope.launch {
             val therapy = getTherapyFromDatabase(MainActivity.getCurrentPatientId())
+            Log.d("ST4","removeAllPositionsForTherapy")
             remove(therapy?.therapyId)
+            removeScopeCompleted.complete(Unit)
         }
     }
 
@@ -62,6 +76,7 @@ class SetTherapy4ViewModel (
     private suspend fun insert(therapyPosition: TherapyPositions){
         withContext(Dispatchers.IO){
             database.insertTherapyPosition(therapyPosition)
+            Log.d("ST4","${therapyPosition.therapyId}, ${therapyPosition.positionId}")
         }
     }
 

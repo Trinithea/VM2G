@@ -49,6 +49,7 @@ class SetTherapy4Fragment : Fragment(){
         adapter = ExercisePositionAdapter(PositionListener {
                 positionId -> selectPosition(positionId)
         })
+
         binding.positionList.adapter = adapter
         viewModel.positions.observe(viewLifecycleOwner, Observer {
             it?.let{

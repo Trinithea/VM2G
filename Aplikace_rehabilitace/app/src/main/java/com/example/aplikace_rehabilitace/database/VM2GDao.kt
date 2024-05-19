@@ -37,13 +37,13 @@ interface VM2GDao {
     fun getAllPatients(): LiveData<List<Patient>>
 
     @Query("SELECT * FROM position_table WHERE positionId = :positionId")
-    fun getExercisePosition(positionId:Long): ExercisePosition?
+    fun getExercisePosition(positionId:Long): ExercisePosition
 
     @Query("SELECT * FROM position_table ORDER BY positionId")
     fun getAllExercisePositions(): LiveData<List<ExercisePosition>>
 
-    @Query("SELECT positionId FROM therapy_positions_table WHERE therapyId=:therapyId ORDER BY positionId")
-    fun getAllTherapyPositionsIds(therapyId:Long): LiveData<List<Long>>
+    @Query("SELECT * FROM therapy_positions_table WHERE therapyId=:therapyId")
+    suspend fun getAllTherapyPositions(therapyId: Long?): List<TherapyPositions>
 
     @Query("DELETE FROM therapy_positions_table WHERE therapyId = :therapyId")
     fun removeAllPositionsForTherapy(therapyId: Long?)

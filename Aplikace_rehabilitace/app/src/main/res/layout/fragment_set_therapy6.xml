@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="setTherapy6ViewModel"
+            type="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapy6ViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,7 +23,9 @@
         android:fontFamily="@font/roboto"
         android:text="@string/zapojen_do_v_zkumu"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/cbChciSeZapojit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
@@ -57,7 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <Button
-        android:id="@+id/continue3Button"
+        android:id="@+id/continue6Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -70,17 +78,21 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbChciSeZapojit" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="334dp"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:src="@drawable/veverka_zeleny_micek"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -97,10 +109,12 @@
         android:text="Chci se zapojit"
         android:textColorHighlight="@color/colorBlue"
         android:textColorLink="@color/colorBlue"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/continue3Button"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/continue6Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.489" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

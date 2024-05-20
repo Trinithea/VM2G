@@ -101,5 +101,9 @@
     <fragment
         android:id="@+id/setTherapyFinalFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.therapy_settings.SetTherapyFinalFragment"
-        android:label="SetTherapyFinalFragment" />
+        android:label="SetTherapyFinalFragment" >
+        <action
+            android:id="@+id/action_setTherapyFinalFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
 </navigation>

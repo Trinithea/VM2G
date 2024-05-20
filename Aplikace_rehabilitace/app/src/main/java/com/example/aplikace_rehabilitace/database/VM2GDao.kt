@@ -24,6 +24,12 @@ interface VM2GDao {
     @Update
     fun updateTherapy(therapy: TherapySettings)
 
+    @Query("UPDATE therapy_settings_table SET frequency = :frequency, time1 = :time1, time2 = :time2, time3=:time3, time4=:time4, time5=:time5 WHERE patientId = :patientId")
+    fun updateTherapyTimes(patientId: Long, frequency: Int, time1:String, time2:String, time3:String,time4:String,time5:String)
+
+    @Query("UPDATE therapy_settings_table SET research=:research WHERE patientId = :patientId")
+    fun updateTherapyResearch(patientId: Long, research: Boolean)
+
     @Query("SELECT * from therapy_settings_table WHERE patientId = :patientId")
     fun getTherapy(patientId: Long): TherapySettings?
 
@@ -51,8 +57,7 @@ interface VM2GDao {
     @Query("UPDATE therapy_settings_table SET frequency = :frequency WHERE patientId = :patientId")
     fun updateTherapyFrequency(patientId: Long, frequency: Int)
 
-    @Query("UPDATE therapy_settings_table SET frequency = :frequency, time1 = :time1, time2 = :time2, time3=:time3, time4=:time4, time5=:time5 WHERE patientId = :patientId")
-    fun updateTherapyTimes(patientId: Long, frequency: Int, time1:String, time2:String, time3:String,time4:String,time5:String)
+
 
 
 }

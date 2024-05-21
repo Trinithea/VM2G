@@ -37,4 +37,16 @@
     <string name="zapojte_se_do_v_zkumu">Zapojte se do výzkumu</string>
     <string name="zapojen_do_v_zkumu">Zapojení do výzkumu je jednoduché, vyžaduje od vás trochu práce navíc, pomůžete ostatním rodičům i dětem.</string>
     <string name="chci_se_zapojit">Chci se zapojit</string>
+    <string name="pokra_ovat_v_terapii">Pokračovat v terapii</string>
+    <string name="nastavit_novou_terapii">Nastavit novou terapii</string>
+    <string name="snimejte_cele_telo">Snímejte celé tělo pacienta, dbejte na to, aby se po celou dobu snímání nedostalo mimo záběr. Ideálně umístěte mobilní telefon do stativu.</string>
+    <string name="zpet">Zpět</string>
+    <string name="snimani_2">Snímejte provádění terapie minimálně minutu, abychom stihli zaznamenat průběh reflexu. Čas Vám změříme</string>
+    <string name="cas_snimani">Čas snímání</string>
+    <string name="_1_minuta">1 minuta</string>
+    <string name="snimani_obou_stran">Snímání obou stran</string>
+    <string name="_1_1_minuta">1+1 minuta</string>
+    <string name="nasn_mejte_prov_d_n_reflexu_na_obou_stran_ch_reflex_prob_h_n_kdy_rozd_ln_as_sn_m_n_v_m_op_t_zm_me">Nasnímejte provádění reflexu na obou stranách, reflex probíhá někdy rozdílně. Čas snímání Vám opět změříme.</string>
+    <string name="vyzkum_zahajen">Výzkum zahájen</string>
+    <string name="skaceme_do_toho_rovn_ma_nohama">Skáčeme do toho rovnýma nohama!</string>
 </resources>

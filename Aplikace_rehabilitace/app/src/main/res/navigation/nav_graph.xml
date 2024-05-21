@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_addPatientFragment"
             app:destination="@id/addPatientFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_preparationRecording1"
+            app:destination="@id/preparationRecording1" />
     </fragment>
     <fragment
         android:id="@+id/sendRequestFragment"
@@ -106,4 +109,41 @@
             android:id="@+id/action_setTherapyFinalFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/preparationRecording1"
+        android:name="com.example.aplikace_rehabilitace.ui_.snimani.PreparationRecording1"
+        android:label="PreparationRecording1" >
+        <action
+            android:id="@+id/action_preparationRecording1_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_preparationRecording1_to_preparationRecording2"
+            app:destination="@id/preparationRecording2" />
+    </fragment>
+    <fragment
+        android:id="@+id/preparationRecording2"
+        android:name="com.example.aplikace_rehabilitace.ui_.snimani.PreparationRecording2"
+        android:label="PreparationRecording2" >
+        <action
+            android:id="@+id/action_preparationRecording2_to_preparationRecording1"
+            app:destination="@id/preparationRecording1" />
+        <action
+            android:id="@+id/action_preparationRecording2_to_preparationRecording3"
+            app:destination="@id/preparationRecording3" />
+    </fragment>
+    <fragment
+        android:id="@+id/preparationRecording3"
+        android:name="com.example.aplikace_rehabilitace.ui_.snimani.PreparationRecording3"
+        android:label="PreparationRecording3" >
+        <action
+            android:id="@+id/action_preparationRecording3_to_preparationRecording2"
+            app:destination="@id/preparationRecording2" />
+        <action
+            android:id="@+id/action_preparationRecording3_to_finalPreparationFragment"
+            app:destination="@id/finalPreparationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalPreparationFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.snimani.FinalPreparationFragment"
+        android:label="FinalPreparationFragment" />
 </navigation>

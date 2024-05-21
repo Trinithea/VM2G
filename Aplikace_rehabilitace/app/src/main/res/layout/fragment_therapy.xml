@@ -37,7 +37,7 @@
             android:padding="16dp"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
-            android:text="@string/za_t_novou_terapii"
+            android:text="@string/pokra_ovat_v_terapii"
             android:textColor="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,13 +47,26 @@
             android:id="@+id/btnAddNewPatient"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/roundcorner16"
             android:padding="16dp"
             android:src="@drawable/person_add_alt"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/btnStartTherapy" />
+
+        <ImageButton
+            android:id="@+id/btnEditTherapy"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/roundcorner16"
+            android:padding="16dp"
+            android:src="@drawable/pencil_white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnStartTherapy" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/patientList"

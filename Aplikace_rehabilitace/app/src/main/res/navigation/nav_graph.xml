@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_preparationRecording1"
             app:destination="@id/preparationRecording1" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_startExerciseFragment"
+            app:destination="@id/startExerciseFragment" />
     </fragment>
     <fragment
         android:id="@+id/sendRequestFragment"
@@ -146,4 +149,86 @@
         android:id="@+id/finalPreparationFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.snimani.FinalPreparationFragment"
         android:label="FinalPreparationFragment" />
+    <fragment
+        android:id="@+id/exerciseTimerFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseTimerFragment"
+        android:label="ExerciseTimerFragment" >
+        <action
+            android:id="@+id/action_exerciseTimerFragment_to_exerciseChangePositionFragment"
+            app:destination="@id/exerciseChangePositionFragment" />
+        <action
+            android:id="@+id/action_exerciseTimerFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseAfterFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseAfterFragment"
+        android:label="ExerciseAfterFragment" >
+        <action
+            android:id="@+id/action_exerciseAfterFragment_to_exerciseAfterMessageFragment"
+            app:destination="@id/exerciseAfterMessageFragment" />
+        <action
+            android:id="@+id/action_exerciseAfterFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseAfterMessageFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseAfterMessageFragment"
+        android:label="ExerciseAfterMessageFragment" >
+        <action
+            android:id="@+id/action_exerciseAfterMessageFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseChangePositionFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseChangePositionFragment"
+        android:label="ExerciseChangePositionFragment" >
+        <action
+            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseTimerFragment"
+            app:destination="@id/exerciseTimerFragment" />
+        <action
+            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseAfterFragment"
+            app:destination="@id/exerciseAfterFragment" />
+        <action
+            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseInstructionsFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseInstructionsFragment"
+        android:label="ExerciseInstructionsFragment" >
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseTimerFragment"
+            app:destination="@id/exerciseTimerFragment" />
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_startExerciseFragment"
+            app:destination="@id/startExerciseFragment" />
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_exercisePreparationFragment"
+            app:destination="@id/exercisePreparationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startExerciseFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.StartExerciseFragment"
+        android:label="fragment_start_exercise"
+        tools:layout="@layout/fragment_start_exercise" >
+        <action
+            android:id="@+id/action_startExerciseFragment_to_exercisePreparationFragment"
+            app:destination="@id/exercisePreparationFragment" />
+        <action
+            android:id="@+id/action_startExerciseFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercisePreparationFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExercisePreparationFragment"
+        android:label="fragment_exercise_instructions"
+        tools:layout="@layout/fragment_exercise_instructions" >
+        <action
+            android:id="@+id/action_exercisePreparationFragment_to_startExerciseFragment"
+            app:destination="@id/startExerciseFragment" />
+        <action
+            android:id="@+id/action_exercisePreparationFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+    </fragment>
 </navigation>

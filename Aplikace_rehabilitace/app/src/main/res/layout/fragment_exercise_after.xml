@@ -22,20 +22,20 @@
         tools:layout_editor_absoluteY="522dp" />
 
     <ImageButton
-        android:id="@+id/btnEditTherapy"
+        android:id="@+id/btnMessage"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/roundcorner16"
         android:padding="8dp"
-        android:src="@drawable/pencil_white"
+        android:src="@drawable/message"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnStartTherapy" />
+        app:layout_constraintEnd_toStartOf="@+id/btnHomeScreen" />
 
     <Button
-        android:id="@+id/btnStartTherapy"
+        android:id="@+id/btnHomeScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -100,7 +100,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnStartTherapy"
+        app:layout_constraintBottom_toTopOf="@+id/btnHomeScreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWhichPosition"/>

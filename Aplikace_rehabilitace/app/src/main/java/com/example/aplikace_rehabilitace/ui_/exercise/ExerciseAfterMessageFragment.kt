@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.aplikace_rehabilitace.R
-import com.example.aplikace_rehabilitace.databinding.FragmentExercisePreparationBinding
+import com.example.aplikace_rehabilitace.databinding.FragmentExerciseAfterMessageBinding
 import com.example.aplikace_rehabilitace.databinding.FragmentFinalPreparationBinding
 
-
-class ExercisePreparationFragment : Fragment() {
-    private lateinit var binding: FragmentExercisePreparationBinding
+class ExerciseAfterMessageFragment : Fragment() {
+    private lateinit var binding: FragmentExerciseAfterMessageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,13 +19,12 @@ class ExercisePreparationFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        return FragmentExercisePreparationBinding.inflate(inflater, container, false).root
+        return FragmentExerciseAfterMessageBinding.inflate(inflater, container, false).root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentExercisePreparationBinding.bind(view)
-
+        binding = FragmentExerciseAfterMessageBinding.bind(view)
+        binding.btnZaznamenat.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_exerciseAfterMessageFragment_to_homeScreenFragment))
 
     }
-
 }

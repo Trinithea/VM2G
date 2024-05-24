@@ -8,7 +8,7 @@
     tools:context=".ui_.exercise.StartExerciseFragment">
 
     <Button
-        android:id="@+id/continueButton"
+        android:id="@+id/btnStartTherapy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -21,10 +21,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/backButton" />
+        app:layout_constraintStart_toEndOf="@+id/btnShowPreparation" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/btnShowPreparation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -35,7 +35,7 @@
         android:text="@string/ukazat_pripravu"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/continueButton"
+        app:layout_constraintEnd_toStartOf="@+id/btnStartTherapy"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -50,7 +50,7 @@
         android:fontFamily="@font/roboto"
         android:text="@string/vyberte_pr_vod_terapi"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/continueButton"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartTherapy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />

@@ -83,7 +83,13 @@ class TherapyHomeScreenFragment : Fragment() {
             } else {
                 binding.btnStartTherapy.text = getString(R.string.pokra_ovat_v_terapii)
                 binding.btnEditTherapy.isVisible = true
-                binding.btnStartTherapy.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_setTherapy1Fragment))
+                if(viewModel.therapy.value!!.researchParticipation){
+                    binding.btnStartTherapy.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_preparationRecording1))
+                }
+                else{
+                    binding.btnStartTherapy.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeScreenFragment_to_startExerciseFragment))
+                }
+
             }
             viewModel.initializingCompleted = CompletableDeferred<Unit>()
         }

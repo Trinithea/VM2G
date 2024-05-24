@@ -4,7 +4,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.example.aplikace_rehabilitace.MainActivity
-import com.example.aplikace_rehabilitace.MainApplicationClass
 import com.example.aplikace_rehabilitace.R
 import com.example.aplikace_rehabilitace.database.Patient
 
@@ -21,7 +20,7 @@ fun ConstraintLayout.setBackground(item: Patient?){
         val selected = item.patientId == MainActivity.getCurrentPatientId()
         setBackgroundResource(when(selected){
             true -> R.drawable.round_yellow_darker_16
-            false -> R.drawable.round_yellow_16
+            false -> R.drawable.round_lightyellow_16
         })
     }
 }

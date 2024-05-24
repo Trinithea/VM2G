@@ -5,26 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:id="@+id/tblPlannedExercise"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlanovanaCviceni"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProvedenaCviceni"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtProvedenaCviceni" >
+
+        <TableLayout
+            android:id="@+id/tblCompletedExercises"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
 
     <TextView
         android:id="@+id/txtProvedenaCviceni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto"
         android:text="@string/proveden_cvi_en"
@@ -34,13 +37,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="228dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStreak" />
 
     <TextView
         android:id="@+id/txtPlanovanaCviceni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto"
         android:text="@string/planovan_cvi_en"
@@ -50,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="393dp" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <Button
-        android:id="@+id/btnStartTherapy"
+        android:id="@+id/btnStartExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -99,6 +103,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_yellow_4"
         android:padding="8dp"
@@ -107,37 +112,7 @@
         android:textColor="@color/colorBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="163dp" />
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtTimeExercise"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlanovanaCviceni">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imgSmile" />
 
     <TextView
         android:id="@+id/txtTimeExercise"
@@ -146,7 +121,7 @@
         android:layout_marginBottom="32dp"
         android:text="30 minut do dalšího cvičení"
         android:textColor="@color/colorBlue"
-        app:layout_constraintBottom_toTopOf="@+id/btnStartTherapy"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartExercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -159,4 +134,22 @@
         app:layout_constraintEnd_toStartOf="@+id/txtTimeExercise"
         app:layout_constraintTop_toTopOf="@+id/txtTimeExercise"
         app:srcCompat="@drawable/clock" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTimeExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlanovanaCviceni">
+
+        <TableLayout
+            android:id="@+id/tblPlannedExercises"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

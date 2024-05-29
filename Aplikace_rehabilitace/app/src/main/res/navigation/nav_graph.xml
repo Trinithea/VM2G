@@ -150,17 +150,6 @@
         android:name="com.example.aplikace_rehabilitace.ui_.snimani.FinalPreparationFragment"
         android:label="FinalPreparationFragment" />
     <fragment
-        android:id="@+id/exerciseTimerFragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseTimerFragment"
-        android:label="ExerciseTimerFragment" >
-        <action
-            android:id="@+id/action_exerciseTimerFragment_to_exerciseChangePositionFragment"
-            app:destination="@id/exerciseChangePositionFragment" />
-        <action
-            android:id="@+id/action_exerciseTimerFragment_to_exerciseInstructionsFragment"
-            app:destination="@id/exerciseInstructionsFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/exerciseAfterFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseAfterFragment"
         android:label="ExerciseAfterFragment" >
@@ -180,34 +169,6 @@
             app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/exerciseChangePositionFragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseChangePositionFragment"
-        android:label="ExerciseChangePositionFragment" >
-        <action
-            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseTimerFragment"
-            app:destination="@id/exerciseTimerFragment" />
-        <action
-            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseAfterFragment"
-            app:destination="@id/exerciseAfterFragment" />
-        <action
-            android:id="@+id/action_exerciseChangePositionFragment_to_exerciseInstructionsFragment"
-            app:destination="@id/exerciseInstructionsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/exerciseInstructionsFragment"
-        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseInstructionsFragment"
-        android:label="ExerciseInstructionsFragment" >
-        <action
-            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseTimerFragment"
-            app:destination="@id/exerciseTimerFragment" />
-        <action
-            android:id="@+id/action_exerciseInstructionsFragment_to_startExerciseFragment"
-            app:destination="@id/startExerciseFragment" />
-        <action
-            android:id="@+id/action_exerciseInstructionsFragment_to_exercisePreparationFragment"
-            app:destination="@id/exercisePreparationFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/startExerciseFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.exercise.StartExerciseFragment"
         android:label="fragment_start_exercise"
@@ -216,8 +177,8 @@
             android:id="@+id/action_startExerciseFragment_to_exercisePreparationFragment"
             app:destination="@id/exercisePreparationFragment" />
         <action
-            android:id="@+id/action_startExerciseFragment_to_exerciseInstructionsFragment"
-            app:destination="@id/exerciseInstructionsFragment" />
+            android:id="@+id/action_startExerciseFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
     </fragment>
     <fragment
         android:id="@+id/exercisePreparationFragment"
@@ -228,7 +189,18 @@
             android:id="@+id/action_exercisePreparationFragment_to_startExerciseFragment"
             app:destination="@id/startExerciseFragment" />
         <action
-            android:id="@+id/action_exercisePreparationFragment_to_exerciseInstructionsFragment"
-            app:destination="@id/exerciseInstructionsFragment" />
+            android:id="@+id/action_exercisePreparationFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseFragment"
+        android:label="ExerciseFragment" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseAfterFragment"
+            app:destination="@id/exerciseAfterFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_exercisePreparationFragment"
+            app:destination="@id/exercisePreparationFragment" />
     </fragment>
 </navigation>

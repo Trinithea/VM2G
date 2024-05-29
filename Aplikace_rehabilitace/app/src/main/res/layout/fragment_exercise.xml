@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/frameLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".ui_.exercise.ExercisePreparationFragment">
 
+    <Button
+        android:id="@+id/btnPreparation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/roundedcorner32_blue_stroke"
+        android:cursorVisible="false"
+        android:fontFamily="@font/roboto"
+        android:padding="16dp"
+        android:text="Příprava"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continueButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:id="@+id/txtWhichPosition"
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto"
-        android:text="1/4 poloh"
+        android:text="@string/_1_4_poloh"
         android:textAlignment="center"
         android:textColor="@color/colorBlue"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtTimeLeftOverall"
+        app:layout_constraintBottom_toTopOf="@+id/txt2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,22 +55,21 @@
         android:textAlignment="center"
         android:textColor="@color/colorBlue"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtWhichPosition"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/txt1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtTimeLeftOverall"
+        android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto"
-        android:text="17:40 zbývá"
+        android:text="@string/pritlak_provadejte"
         android:textAlignment="center"
-        android:textColor="@color/colorBlue"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/continueButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -62,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/roundcorner32_gray"
+        android:background="@drawable/roundcorner32"
         android:fontFamily="@font/roboto"
         android:padding="16dp"
         android:text="@string/pokracovat"
@@ -72,12 +89,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imgPositions"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/txtTimeLeft"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -87,11 +105,12 @@
         app:srcCompat="@drawable/pos1" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/imgTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:src="@drawable/timer"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/txtTimeLeft"
         app:layout_constraintEnd_toStartOf="@+id/txtTimeLeft"
         app:layout_constraintTop_toTopOf="@+id/txtTimeLeft" />
@@ -104,7 +123,9 @@
         android:background="@drawable/round_yellow_16"
         android:padding="8dp"
         android:src="@drawable/info"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/continueButton"
         app:layout_constraintEnd_toStartOf="@+id/continueButton"
         app:layout_constraintTop_toTopOf="@+id/continueButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -87,7 +87,7 @@ class SetTherapy3ViewModel (
             positionPreparationSteps = "Připravte lehátko, umístěte zpola nafouklý disk, ležící podložku a pro větší komfort cvičícího podlavník\n" +
                     "Umístěte 3 míčky velikosti 3 pod pravé žebro a na obě třísla\n"+
                     "Umístěte 4 míčky velikosti 2 na kotník z obou stran na nárt a plosku nohy",
-            positionPreparationImages = "1_1.jpeg;1_2.jpeg;1_3.jpeg",
+            positionPreparationImages = "pos1_1.jpeg;pos1_2.jpeg;pos1_3.jpeg",
             positionImage = R.drawable.pos1
         )
 

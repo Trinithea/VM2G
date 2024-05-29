@@ -16,6 +16,9 @@ interface VM2GDao {
     suspend fun insertExercisePosition(position: ExercisePosition)
 
     @Insert
+    suspend fun insertExercisePatient(expat: ExercisePatient)
+
+    @Insert
     suspend fun insertPatient(patient: Patient)
 
     @Insert
@@ -32,6 +35,9 @@ interface VM2GDao {
 
     @Query("SELECT * from therapy_settings_table WHERE patientId = :patientId")
     fun getTherapy(patientId: Long): TherapySettings?
+
+    @Query("SELECT * from exercise_patient_table WHERE patientId = :patientId")
+    fun getAllCompletedExercise(patientId: Long): LiveData<List<ExercisePatient>>
 
     @Update
     fun updatePatient(patient: Patient)

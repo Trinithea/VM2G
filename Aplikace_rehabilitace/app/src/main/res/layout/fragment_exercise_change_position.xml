@@ -9,7 +9,7 @@
     tools:context=".ui_.exercise.ExercisePreparationFragment">
 
     <TextView
-        android:id="@+id/txtWhichPosition"
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -20,7 +20,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorBlue"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtTimeLeftOverall"
+        app:layout_constraintBottom_toTopOf="@+id/txt2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,12 +37,12 @@
         android:textAlignment="center"
         android:textColor="@color/colorBlue"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtWhichPosition"
+        app:layout_constraintBottom_toTopOf="@+id/txt1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtTimeLeftOverall"
+        android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

@@ -24,7 +24,7 @@ class StartExerciseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentStartExerciseBinding.bind(view)
-        binding.btnStartTherapy.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_startExerciseFragment_to_exerciseInstructionsFragment))
+        binding.btnStartTherapy.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_startExerciseFragment_to_exerciseFragment))
         binding.btnShowPreparation.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_startExerciseFragment_to_exercisePreparationFragment))
     }
 }

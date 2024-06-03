@@ -73,4 +73,5 @@
     <string name="zahajit_cviceni">Zahájit cvičení</string>
     <string name="proveden_cvi_en">Provedená cvičení</string>
     <string name="planovan_cvi_en">Plánovaná cvičení</string>
+    <string name="datum_narozeni">Datum narození</string>
 </resources>

@@ -19,12 +19,11 @@ class ExerciseAfterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-        return FragmentExerciseAfterBinding.inflate(inflater, container, false).root
+        binding = FragmentExerciseAfterBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentExerciseAfterBinding.bind(view)
         binding.btnHomeScreen.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_exerciseAfterFragment_to_homeScreenFragment))
         binding.btnMessage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_exerciseAfterFragment_to_exerciseAfterMessageFragment))
 

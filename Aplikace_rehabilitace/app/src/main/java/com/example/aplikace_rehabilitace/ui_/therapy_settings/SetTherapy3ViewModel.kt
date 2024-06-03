@@ -88,7 +88,7 @@ class SetTherapy3ViewModel (
                     "Umístěte 3 míčky velikosti 3 pod pravé žebro a na obě třísla\n"+
                     "Umístěte 4 míčky velikosti 2 na kotník z obou stran na nárt a plosku nohy",
             positionPreparationImages = "pos1_1.jpeg;pos1_2.jpeg;pos1_3.jpeg",
-            positionImage = R.drawable.pos1
+            positionImage = "pos1"
         )
 
         val pos2 = ExercisePosition(
@@ -97,7 +97,7 @@ class SetTherapy3ViewModel (
             positionDescription = "Přítlak provádějte na vnitřní straně kolena a na rameni",
             positionPreparationSteps = "empty",
             positionPreparationImages = "empty",
-            positionImage = R.drawable.pos2
+            positionImage = "pos2"
         )
 
         val pos3 = ExercisePosition(
@@ -106,7 +106,7 @@ class SetTherapy3ViewModel (
             positionDescription = "empty",
             positionPreparationSteps = "empty",
             positionPreparationImages = "empty",
-            positionImage = R.drawable.pos3
+            positionImage = "pos3"
         )
 
         addTemporaryExercisePosition(pos1)

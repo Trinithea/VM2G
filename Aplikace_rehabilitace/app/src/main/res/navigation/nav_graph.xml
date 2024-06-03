@@ -148,7 +148,11 @@
     <fragment
         android:id="@+id/finalPreparationFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.snimani.FinalPreparationFragment"
-        android:label="FinalPreparationFragment" />
+        android:label="FinalPreparationFragment" >
+        <action
+            android:id="@+id/action_finalPreparationFragment_to_startExerciseFragment"
+            app:destination="@id/startExerciseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exerciseAfterFragment"
         android:name="com.example.aplikace_rehabilitace.ui_.exercise.ExerciseAfterFragment"

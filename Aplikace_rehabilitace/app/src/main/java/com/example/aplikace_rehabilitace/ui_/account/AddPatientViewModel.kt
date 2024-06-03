@@ -38,11 +38,11 @@ class AddPatientViewModel (
     }
 
 
-    fun addPatient(name: String, weight: Int, age: Int){
+    fun addPatient(name: String, weight: Int, birth: String){
         uiScope.launch {
             // TODO:předělat account ID
 
-            val newPatient = Patient(patientName = name, patientWeight = weight, patientAge = age, patientAccountId = accountId)
+            val newPatient = Patient(patientName = name, patientWeight = weight, patientBirth = birth, patientAccountId = accountId)
             insert(newPatient)
             _navigateToHomeScreen.value = newPatient
         }

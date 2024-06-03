@@ -17,8 +17,8 @@ data class Patient(
     @ColumnInfo(name = "weight")
     var patientWeight: Int,
 
-    @ColumnInfo(name = "age")
-    var patientAge: Int,
+    @ColumnInfo(name = "birth")
+    var patientBirth: String,
 
     @ColumnInfo(name = "accountId")
     var patientAccountId: Long

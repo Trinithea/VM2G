@@ -66,9 +66,9 @@ class AddPatientFragment : Fragment() {
         viewModel.addPatient(
             binding.nameTextInput.text.toString(),
             binding.weightTextInput.text.toString().toInt(),
-            binding.ageTextInput.text.toString().toInt()
+            binding.ageTextInput.text.toString()
         )
-        Toast.makeText(context, "Nový pacient pod tímto účtem byl úspěšně přidán", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(context, "Nový pacient pod tímto účtem byl úspěšně přidán", Toast.LENGTH_SHORT).show()
     }
 
 }

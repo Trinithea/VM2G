@@ -23,7 +23,7 @@ class PreparationRecording3 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentPreparationRecording3Binding.bind(view)
-        binding.continueButton.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_preparationRecording1_to_preparationRecording2))
+        binding.continueButton.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_preparationRecording3_to_finalPreparationFragment))
         binding.backButton.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_preparationRecording3_to_preparationRecording2))
     
     }

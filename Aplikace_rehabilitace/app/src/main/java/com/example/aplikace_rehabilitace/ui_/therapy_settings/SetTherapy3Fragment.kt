@@ -85,7 +85,7 @@ class SetTherapy3Fragment : Fragment() {
                 }
             }
         })
-
+        binding.buttonTempDB.visibility = View.INVISIBLE
         binding.continue2Button.setOnClickListener{
             updateTherapy()
             this.findNavController().navigate(R.id.action_setTherapy3Fragment_to_setTherapy4Fragment)

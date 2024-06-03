@@ -25,7 +25,7 @@ class FinalPreparationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentFinalPreparationBinding.bind(view)
-        binding.txtContinue.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_preparationRecording1_to_preparationRecording2))
+        binding.txtContinue.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_finalPreparationFragment_to_startExerciseFragment))
 
     }
 }

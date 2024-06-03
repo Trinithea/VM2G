@@ -88,7 +88,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:backgroundTint="@color/colorBlue"
-        android:hint="@string/v_k"
+        android:hint="@string/datum_narozeni"
         android:textColorHint="@color/colorBlue"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/colorBlue"
@@ -103,8 +103,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ageTextInput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numeric="integer" />
+            android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

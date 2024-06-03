@@ -27,7 +27,7 @@ data class ExercisePosition(
     @ColumnInfo(name = "preparationImages")
     var positionPreparationImages: String,
 
-    @ColumnInfo(name = "imageId")
-    var positionImage: Int
+    @ColumnInfo(name = "imageName")
+    var positionImage: String
 
 )
